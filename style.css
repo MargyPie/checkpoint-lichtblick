@@ -52,12 +52,15 @@ h4 {
   align-items: center;
 }
 
+/*** From medium breakpoint on, nav links are horizontally ***/
 @media screen and (min-width: 768px) {
   .navigation {
     flex-direction: row;
     justify-content: center;
   }
 }
+
+/******************* Main section *******************/
 .main {
   padding: 0 1rem;
   max-width: 70ch;
@@ -65,18 +68,13 @@ h4 {
 }
 
 /*** Hero section background image ***/
-@media screen and (min-width: 768px) {
-  .main {
-    justify-content: center;
-  }
-
+/*@media screen and (min-width: 768px) {
   .hero {
     width: 100%;
+    height: 100%;
     position: absolute;
-    _top: 0;
-    _left: 0;
     object-fit: cover;
     background-image: url(https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
     border: 2px dashed hotpink;
-  }
+  }*/
 }
