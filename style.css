@@ -21,18 +21,18 @@ body {
   margin: 0;
   --page-background-color: white;
   --page-text-color: black;
-  --theme-color: rgba(12, 193, 181, 1);
-  --accent-color: teal;
-  --selection-color: hotpink;
+  _--theme-color: rgba(12, 193, 181, 1);
+  _--accent-color: teal;
+  _--selection-color: hotpink;
 }
 
 /*** Dark scheme turns colors around ***/
-@media screen and (prefers-color-scheme: dark) {
+/* @media screen and (prefers-color-scheme: dark) {
   body {
     --page-background-color: black;
     --page-text-color: white;
   }
-}
+} */
 
 h1,
 h2,
@@ -41,15 +41,39 @@ h4 {
   font-family: "Lato", serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*=========================================*/
 /************ Specific Stylings ************/
 
 /******************* Header *******************/
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo {
+  position: relative;
+  margin-top: 0;
+}
 /*** Navigation bar ***/
 .navigation {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 5rem;
+}
+
+.nav-link {
+  margin-left: 1rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--page-background-color);
+  color: var(--page-text-color);
 }
 
 /*** From medium breakpoint on, nav links are horizontally ***/
@@ -76,5 +100,5 @@ h4 {
     object-fit: cover;
     background-image: url(https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
     border: 2px dashed hotpink;
-  }*/
-}
+  }
+}*/
