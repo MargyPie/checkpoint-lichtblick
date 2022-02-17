@@ -39,6 +39,7 @@ h2,
 h3,
 h4 {
   font-family: "Lato", serif;
+  font-weight: bold;
 }
 
 a {
@@ -102,3 +103,20 @@ a {
     border: 2px dashed hotpink;
   }
 }*/
+
+.waerme-strom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+  text-align: center;
+  background-color: #fec8d8;
+}
+
+.waerme-strom-button {
+  color: var(--page-text-color);
+  border: 2px solid black;
+  padding: 0.5rem 1rem;
+  margin: 1.5rem;
+  border-radius: 4px;
+}
