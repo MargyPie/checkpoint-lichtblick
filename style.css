@@ -21,6 +21,8 @@ body {
   margin: 0;
   --page-background-color: white;
   --page-text-color: black;
+  --footer-background-color: black;
+  --footer-text-color: white;
   _--theme-color: rgba(12, 193, 181, 1);
   _--accent-color: teal;
   _--selection-color: hotpink;
@@ -46,10 +48,10 @@ a {
   text-decoration: none;
 }
 
-/*=========================================*/
-/************ Specific Stylings ************/
+/*===========================================================*/
+/*=================== Specific Stylings =====================*/
 
-/******************* Header *******************/
+/*========================== Header =========================*/
 .header {
   display: flex;
   justify-content: center;
@@ -85,7 +87,8 @@ a {
   }
 }
 
-/******************* Main section *******************/
+/*===========================================================*/
+/*==================== Main section =========================*/
 .main {
   padding: 0 1rem;
   width: 50ch;
@@ -116,7 +119,8 @@ main > * + * {
 /*** Waerme Strom & Klimareformen section ***/
 .waerme-strom,
 .gute-ideen,
-.klimareformen {
+.klimareformen,
+footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -178,4 +182,30 @@ p {
   text-decoration: underline;
   color: var(--page-text-color);
   font-weight: bold;
+}
+
+/*===========================================================*/
+/*========================== Footer =========================*/
+footer {
+  margin-top: 4rem;
+  padding: 3rem 0 3rem 0;
+  color: var(--footer-text-color);
+  background-color: var(--footer-background-color);
+  font-size: 10px;
+}
+
+.footer-links {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  text-decoration: underline;
+}
+
+.footer-navigation > a:visited {
+  color: var(--footer-text-color);
+}
+
+#copy {
+  margin-top: 4rem;
+  color: grey;
+  text-decoration: none;
 }
