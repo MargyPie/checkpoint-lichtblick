@@ -142,11 +142,32 @@ main > * + * {
 .gute-ideen-themen {
   display: flex;
   flex-direction: row;
+  text-align: left;
 }
 
 .thema {
   border: 1px solid black;
   border-radius: 6px;
   margin: 1rem;
-  width: 20rem;
+  padding-bottom: 1rem;
+  width: 300px;
+}
+
+.gutes-bild {
+  position: relative;
+  border-radius: 6px 6px 0 0;
+  transform: translate(-0.5rem, 0.5rem);
+  z-index: -1;
+}
+
+h3,
+p {
+  margin: 1rem;
+}
+
+.gute-ideen-link {
+  margin: 1rem;
+  text-decoration: underline;
+  color: var(--page-text-color);
+  font-weight: bold;
 }
