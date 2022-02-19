@@ -107,7 +107,6 @@ main > * + * {
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--page-background-color);
-  _margin-bottom: 3rem;
 }
 
 .hero-text {
@@ -173,7 +172,7 @@ footer {
 }
 
 h3,
-p {
+.guter-text > p {
   margin: 1rem;
 }
 
