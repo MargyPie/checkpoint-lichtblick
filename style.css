@@ -23,7 +23,7 @@ body {
   --page-text-color: black;
   --footer-background-color: black;
   --footer-text-color: white;
-  _--theme-color: rgba(12, 193, 181, 1);
+  --theme-color: #ffdac1;
   _--accent-color: teal;
   _--selection-color: hotpink;
 }
@@ -77,6 +77,23 @@ a {
   padding: 0.25rem 0.5rem;
   background-color: var(--page-background-color);
   color: var(--page-text-color);
+  transition: border 0.5s ease;
+}
+
+.nav-link:hover {
+  padding-top: 0.5rem;
+  border-top: 0.5rem solid var(--page-text-color);
+  transition: border 0.2s ease;
+}
+
+.nav-link:focus {
+  outline-color: var(--theme-color);
+  outline-style: dotted;
+}
+
+.nav-link:active {
+  border-top: 0.5rem solid var(--theme-color);
+  color: var(--theme-color);
 }
 
 /*** From medium breakpoint on, nav links are horizontally ***/
@@ -145,6 +162,18 @@ footer {
   border-radius: 0.5rem;
 }
 
+.waerme-strom-button:hover,
+.klimareformen-button:hover {
+  font-size: large;
+  transition: font-size 0.5s;
+}
+
+.waerme-strom-button:active,
+.klimareformen-button:active {
+  font-size: medium;
+  border-color: var(--theme-color);
+}
+
 /*** Gute Ideen section ***/
 .gute-ideen-intro {
   padding: 0 7rem;
@@ -167,8 +196,14 @@ footer {
 .gutes-bild {
   position: relative;
   border-radius: 6px 6px 0 0;
-  transform: translate(-0.5rem, 0.5rem);
+  top: 0.5rem;
+  left: -0.5rem;
   z-index: -1;
+  transition: transform 0.2s ease-in-out;
+}
+
+.gutes-bild:hover {
+  transform: translate(0.5rem, -0.5rem);
 }
 
 h3,
@@ -201,6 +236,19 @@ footer {
 
 .footer-navigation > a:visited {
   color: var(--footer-text-color);
+}
+
+.footer-links:hover {
+  transition: color;
+}
+
+.footer-links:focus {
+  outline-color: var(--theme-color);
+  outline-style: dotted;
+}
+
+.footer-links:active {
+  color: var(--theme-color);
 }
 
 #copy {
