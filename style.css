@@ -24,8 +24,7 @@ body {
   --footer-background-color: black;
   --footer-text-color: white;
   --theme-color: #ffdac1;
-  _--accent-color: teal;
-  _--selection-color: hotpink;
+  --height: 30rem;
 }
 
 /*** Dark scheme turns colors around ***/
@@ -64,11 +63,9 @@ a {
   position: relative;
   margin-top: 0;
 }
+
 /*** Navigation bar ***/
 .navigation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-left: 5rem;
 }
 
@@ -97,10 +94,11 @@ a {
 }
 
 /*** From medium breakpoint on, nav links are horizontally ***/
-@media screen and (min-width: 768px) {
-  .navigation {
-    flex-direction: row;
-    justify-content: center;
+@media screen and (max-width: 768px) {
+  .header {
+    display: block;
+    _flex-flow: row wrap;
+    justify-content: space-around;
   }
 }
 
@@ -118,18 +116,38 @@ main > * + * {
 }
 
 /*** Hero section background image ***/
-.hero {
-  height: 25rem;
-  background-image: url(https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+.hero-background {
+  display: block;
+  position: absolute;
+  height: var(--height);
+  width: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  object-fit: cover;
   color: var(--page-background-color);
 }
 
 .hero-text {
-  padding-top: 5rem;
-  padding-left: 2rem;
-  width: 54ch;
+  color: var(--footer-text-color);
+  position: relative;
+  padding-top: 8rem;
+  padding-left: 5rem;
+  margin-bottom: 12rem;
+  width: 45ch;
+}
+
+/*** From medium breakpoint down, text is underneath img ***/
+@media screen and (max-width: 768px) {
+  .hero-background {
+    position: relative;
+  }
+  .hero-text {
+    display: block;
+    color: var(--page-text-color);
+    padding: 1rem;
+    width: fit-content;
+    background-color: #f8f8f8;
+    margin-bottom: 0;
+  }
 }
 
 /*** Waerme Strom & Klimareformen section ***/
@@ -185,6 +203,14 @@ footer {
   text-align: left;
 }
 
+/*** From medium breakpoint on, footer links are horizontally ***/
+@media screen and (max-width: 768px) {
+  .gute-ideen-themen {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 .thema {
   border: 1px solid black;
   border-radius: 6px;
@@ -234,6 +260,12 @@ footer {
   text-decoration: underline;
 }
 
+.footer-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .footer-navigation > a:visited {
   color: var(--footer-text-color);
 }
@@ -255,4 +287,12 @@ footer {
   margin-top: 4rem;
   color: grey;
   text-decoration: none;
+}
+
+/*** From medium breakpoint on, footer links are horizontally ***/
+@media screen and (min-width: 768px) {
+  .footer-navigation {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
