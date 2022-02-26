@@ -1,0 +1,298 @@
+html {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  display: block;
+  margin: 0;
+  --page-background-color: white;
+  --page-text-color: black;
+  --footer-background-color: black;
+  --footer-text-color: white;
+  --theme-color: #ffdac1;
+  --height: 30rem;
+}
+
+/*** Dark scheme turns colors around ***/
+/* @media screen and (prefers-color-scheme: dark) {
+  body {
+    --page-background-color: black;
+    --page-text-color: white;
+  }
+} */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Lato", serif;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*===========================================================*/
+/*=================== Specific Stylings =====================*/
+
+/*========================== Header =========================*/
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo {
+  position: relative;
+  margin-top: 0;
+}
+
+/*** Navigation bar ***/
+.navigation {
+  margin-left: 5rem;
+}
+
+.nav-link {
+  margin-left: 1rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--page-background-color);
+  color: var(--page-text-color);
+  transition: border 0.5s ease;
+}
+
+.nav-link:hover {
+  padding-top: 0.5rem;
+  border-top: 0.5rem solid var(--page-text-color);
+  transition: border 0.2s ease;
+}
+
+.nav-link:focus {
+  outline-color: var(--theme-color);
+  outline-style: dotted;
+}
+
+.nav-link:active {
+  border-top: 0.5rem solid var(--theme-color);
+  color: var(--theme-color);
+}
+
+/*** From medium breakpoint on, nav links are horizontally ***/
+@media screen and (max-width: 768px) {
+  .header {
+    display: block;
+    _flex-flow: row wrap;
+    justify-content: space-around;
+  }
+}
+
+/*===========================================================*/
+/*==================== Main section =========================*/
+.main {
+  padding: 0 1rem;
+  width: 50ch;
+  margin: 0 auto;
+}
+
+/*** Space between articles ***/
+main > * + * {
+  margin-top: 3rem;
+}
+
+/*** Hero section background image ***/
+.hero-background {
+  display: block;
+  position: absolute;
+  height: var(--height);
+  width: 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  color: var(--page-background-color);
+}
+
+.hero-text {
+  color: var(--footer-text-color);
+  position: relative;
+  padding-top: 8rem;
+  padding-left: 5rem;
+  margin-bottom: 12rem;
+  width: 45ch;
+}
+
+/*** From medium breakpoint down, text is underneath img ***/
+@media screen and (max-width: 768px) {
+  .hero-background {
+    position: relative;
+  }
+  .hero-text {
+    display: block;
+    color: var(--page-text-color);
+    padding: 1rem;
+    width: fit-content;
+    background-color: #f8f8f8;
+    margin-bottom: 0;
+  }
+}
+
+/*** Waerme Strom & Klimareformen section ***/
+.waerme-strom,
+.gute-ideen,
+.klimareformen,
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.waerme-strom {
+  padding: 5rem 7rem;
+  background-color: #fec8d8;
+}
+
+.klimareformen {
+  padding: 5rem 7rem;
+  background-color: #94b49f;
+}
+
+.waerme-strom-button,
+.klimareformen-button {
+  color: var(--page-text-color);
+  border: 2px solid black;
+  padding: 0.5rem 1rem;
+  margin: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.waerme-strom-button:hover,
+.klimareformen-button:hover {
+  font-size: large;
+  transition: font-size 0.5s;
+}
+
+.waerme-strom-button:active,
+.klimareformen-button:active {
+  font-size: medium;
+  border-color: var(--theme-color);
+}
+
+/*** Gute Ideen section ***/
+.gute-ideen-intro {
+  padding: 0 7rem;
+}
+
+.gute-ideen-themen {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+/*** From medium breakpoint on, footer links are horizontally ***/
+@media screen and (max-width: 768px) {
+  .gute-ideen-themen {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.thema {
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  width: 300px;
+}
+
+.gutes-bild {
+  position: relative;
+  border-radius: 6px 6px 0 0;
+  top: 0.5rem;
+  left: -0.5rem;
+  z-index: -1;
+  transition: transform 0.2s ease-in-out;
+}
+
+.gutes-bild:hover {
+  transform: translate(0.5rem, -0.5rem);
+}
+
+h3,
+.guter-text > p {
+  margin: 1rem;
+}
+
+.gute-ideen-link {
+  margin: 1rem;
+  text-decoration: underline;
+  color: var(--page-text-color);
+  font-weight: bold;
+}
+
+/*===========================================================*/
+/*========================== Footer =========================*/
+footer {
+  margin-top: 4rem;
+  padding: 3rem 0 3rem 0;
+  color: var(--footer-text-color);
+  background-color: var(--footer-background-color);
+  font-size: 10px;
+}
+
+.footer-links {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  text-decoration: underline;
+}
+
+.footer-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-navigation > a:visited {
+  color: var(--footer-text-color);
+}
+
+.footer-links:hover {
+  transition: color;
+}
+
+.footer-links:focus {
+  outline-color: var(--theme-color);
+  outline-style: dotted;
+}
+
+.footer-links:active {
+  color: var(--theme-color);
+}
+
+#copy {
+  margin-top: 4rem;
+  color: grey;
+  text-decoration: none;
+}
+
+/*** From medium breakpoint on, footer links are horizontally ***/
+@media screen and (min-width: 768px) {
+  .footer-navigation {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
